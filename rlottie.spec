@@ -4,7 +4,7 @@
 
 Name: rlottie
 Version: 0
-Release: 6.%{date}git%{shortcommit0}%{?dist}
+Release: 7.%{date}git%{shortcommit0}%{?dist}
 
 # Main source: LGPLv2+
 # rapidjson (base) - MIT
@@ -21,8 +21,6 @@ BuildRequires: gtest-devel
 BuildRequires: gcc-c++
 BuildRequires: meson
 BuildRequires: gcc
-
-ExcludeArch: aarch64
 
 %description
 rlottie is a platform independent standalone C++ library for rendering
@@ -75,6 +73,9 @@ sed -e "s/, 'werror=true'//" -e "s/, 'optimization=s'//" -i meson.build
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Wed May 13 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-7.20191224gita718c7e
+- Enabled aarch64 again.
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0-6.20191224gita718c7e
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 

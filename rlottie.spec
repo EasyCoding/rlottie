@@ -4,7 +4,7 @@
 
 Name: rlottie
 Version: 0
-Release: 8.%{date}git%{shortcommit0}%{?dist}
+Release: 9.%{date}git%{shortcommit0}%{?dist}
 
 # Main source: LGPLv2+
 # rapidjson (base) - MIT
@@ -73,6 +73,10 @@ sed -e "s/, 'werror=true'//" -e "s/, 'optimization=s'//" -i meson.build
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Sat Aug 01 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0-9.20191224gita718c7e
+- Second attempt - Rebuilt for
+  https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0-8.20191224gita718c7e
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 

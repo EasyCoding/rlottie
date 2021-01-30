@@ -1,6 +1,6 @@
 Name: rlottie
 Version: 0.2
-Release: 1%{?dist}
+Release: 3%{?dist}
 
 # Main source: MIT
 # rapidjson (base) - MIT
@@ -12,6 +12,7 @@ Summary: Platform independent standalone library that plays Lottie Animation
 
 URL: https://github.com/Samsung/%{name}
 Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Patch0: %{name}-gcc11.patch
 
 BuildRequires: gtest-devel
 BuildRequires: gcc-c++
@@ -40,7 +41,7 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup
+%autosetup -p1
 sed -e "s/, 'optimization=s'//" -i meson.build
 
 %build
@@ -73,6 +74,12 @@ sed -e "s/, 'optimization=s'//" -i meson.build
 %{_libdir}/cmake/%{name}/
 
 %changelog
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
+* Fri Oct 16 2020 Jeff Law <law@redhat.com> - 0.2-2
+- Fix missing #include for gcc-11
+
 * Wed Oct 14 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.2-1
 - Updated to version 0.2.
 

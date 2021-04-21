@@ -1,6 +1,6 @@
 Name: rlottie
 Version: 0.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 
 # Main source: MIT
 # rapidjson (base) - MIT
@@ -74,6 +74,9 @@ sed -e "s/, 'optimization=s'//" -i meson.build
 %{_libdir}/cmake/%{name}/
 
 %changelog
+* Tue Mar 30 2021 Jonathan Wakely <jwakely@redhat.com> - 0.2-4
+- Rebuilt for removed libstdc++ symbol (#1937698)
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.2-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
